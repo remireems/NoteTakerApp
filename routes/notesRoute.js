@@ -13,13 +13,14 @@ router.post('/notes', (req, res) => {
   newNote.id = newNoteId
 
   notes.push(newNote)
+  console.log(newNote)
   res.sendStatus(200)
 })
 
 // delete notes by id and remove from db.json
 router.delete('/notes/:id', (req, res) => {
-  const id = req.params.id
-  
+  let id = req.params.id
+
   notes = notes.filter(note => note.id !== id)
   res.sendStatus(200)
 })
