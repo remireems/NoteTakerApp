@@ -14,3 +14,26 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT || 3000)
+
+// app.get('/notes', (req, res) => {
+//   res.sendFile(join(__dirname, '/public/notes.html'))
+// })
+
+// app.get('*', (req, res) => {
+//   res.sendFile(join(__dirname, '/public/index.html'))
+// })
+
+// app.get('/api/notes', (req, res) => {
+//   res.json(notes)
+// })
+
+// app.post('/api/notes', (req, res) => {
+//   notes.push(req.body)
+//   res.sendStatus(200)
+// })
+
+// app.delete('/api/notes/:id', (req, res) => {
+//   const id = req.params.id
+//   notes = notes.filter(note => note.id !== id)
+//   res.sendStatus(200)
+// })
