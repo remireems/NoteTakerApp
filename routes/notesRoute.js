@@ -6,18 +6,18 @@ router.get('/notes', (req, res) => {
 })
 
 router.post('/notes', (req, res) => {
-  // let newNote = req.body
-  // let newNoteId = notes.length
-  // newNote.id = newNoteId
+  let newNote = req.body
+  let newNoteId = notes.length
+  newNote.id = newNoteId
 
-  // notes.push(newNote)
-  notes.push(req.body)
+  notes.push(newNote)
+
   res.sendStatus(200)
 })
 
 router.delete('/notes/:id', (req, res) => {
   const id = req.params.id
-  // let noteId = req.params.id
+  
   notes = notes.filter(note => note.id !== id)
   res.sendStatus(200)
 })
