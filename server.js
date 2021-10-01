@@ -9,19 +9,16 @@ app.use(express.json())
 
 app.use(require('./routes'))
 
+// routes to notes.html
+app.get('/notes', (req, res) => {
+  res.sendFile(join(__dirname, './public/notes.html'))
+})
+
+// routes to index.html
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, './public/index.html'))
 })
 
-app.listen(process.env.PORT || 3000)
-
-// app.get('/notes', (req, res) => {
-//   res.sendFile(join(__dirname, '/public/notes.html'))
-// })
-
-// app.get('*', (req, res) => {
-//   res.sendFile(join(__dirname, '/public/index.html'))
-// })
 
 // app.get('/api/notes', (req, res) => {
 //   res.json(notes)
@@ -37,3 +34,7 @@ app.listen(process.env.PORT || 3000)
 //   notes = notes.filter(note => note.id !== id)
 //   res.sendStatus(200)
 // })
+
+app.listen(process.env.PORT || 3000)
+
+
